@@ -1,0 +1,269 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	margin:								0px;
+	padding:							0px;
+	font-family:						Verdana, Geneva, sans-serif;
+	font-size:							12px;
+	background-color:					#EEE;
+}
+
+h1
+{
+	text-align:							center;
+	font-family:						Verdana, Geneva, sans-serif;
+	font-size:							18px;
+	margin:								30px;
+}
+
+h2
+{
+	text-align:							left;
+	font-family:						Verdana, Geneva, sans-serif;
+	font-size:							14px;
+	margin:								50px;
+}
+
+h3
+{
+	text-align:							left;
+	font-family:						Verdana, Geneva, sans-serif;
+	font-size:							13px;
+	margin:								30px;
+}
+
+pre
+{
+	white-space:						pre-wrap;
+	white-space:						-moz-pre-wrap;
+	white-space:						-pre-wrap;
+	white-space:						-o-pre-wrap;
+	word-wrap:							break-word;
+	margin:								0px;
+	padding:							0px;
+}
+
+
+
+.header
+{
+	padding:							28px;
+	background-color:					#1c376b;
+}
+
+.content
+{
+	margin:								0px;
+	padding:							0px;
+}
+
+.logo
+{
+	background-image:					url(../img/presidio.png);
+	background-repeat:					none;
+	position:							absolute;
+	top:								5px;
+	right:								18px;
+	height:								75px;
+	width:								225px;
+}
+
+.title
+{
+
+	top:								19px;
+	left:								25px;
+	font-size:							26px;
+	color:								#FFF;
+}
+
+.menu
+{
+	position:							absolute;
+	top:								43px;
+	left:								245px;
+}
+
+.menuTable
+{
+	border-collapse:					collapse;
+}
+
+.menuTable td a
+{
+	color:								#FFF;
+}
+
+a:link
+{
+	text-decoration:					none;
+	color:								inherit;
+}
+
+a:visited
+{
+	text-decoration:					none;
+	color:								inherit;
+}
+
+a:hover
+{
+	text-decoration:					none;
+	color:								#D00;
+}
+
+a:active
+{
+	text-decoration:					none;
+	color:								#F00;
+}
+
+.menuTable td
+{
+	background-image:					url(../img/menu.png);
+	background-repeat:					repeat-x;
+	height:								30px;
+	padding-right:						15px;
+	padding-left:						15px;
+	color:								#FFF;
+}
+
+.menuTable td.selectedMenuElement
+{
+	text-decoration:					underline;
+}
+
+.error
+{
+	background-image:					url(../img/error.png);
+	background-repeat:					no-repeat;
+	background-position:				5px 5px;
+	color:								#F00;
+	background-color:					#FAA;
+	border:								1px solid #F00;
+	padding:							7px 7px 7px 25px;
+	margin:								1px;
+	font-weight:						bold;
+	line-height:						1.0;
+}
+
+.warning
+{
+	background-image:					url(../img/warning.png);
+	background-repeat:					no-repeat;
+	background-position:				5px 5px;
+	color:								#DF7401;
+	background-color:					#F2F5A9;
+	border:								1px solid #DF7401;
+	padding:							7px 7px 7px 25px;
+	margin:								1px;
+	font-weight:						bold;
+	line-height:						1.0;
+}
+
+.ok
+{
+	color:								#0B610B;
+	background-color:					#81F781;
+	border:								1px solid #0B610B;
+	padding:							5px;
+	margin:								1px;
+	font-weight:						bold;
+	line-height:						1.0;
+}
+
+.button
+{
+	border:								1px #0B0B61 solid;
+	background-image:					url(../img/menu.png);
+	background-repeat:					repeat-x;
+	color:								#FFF;
+	padding:							5px;
+	height:								30px;
+	font-family:						Verdana, Geneva, sans-serif;
+	font-size:							12px;
+	border-collapse:					separate;
+	-webkit-background-origin:			border !important;
+	-moz-background-origin:				border !important;
+	background-origin:					border-box !important;
+	-webkit-border-radius:				3px;
+	-moz-border-radius:					3px;
+	border-radius:						3px;
+	-webkit-box-shadow:					0 0 2px 1px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow:					0 0 2px 1px rgba(0, 0, 0, 0.25);
+	box-shadow:							0 0 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+button[disabled=disabled], button:disabled
+{
+	opacity:							0.5;
+}
+
+input, textarea, select, button, checkbox, text
+{
+	background:							#E0F2F7;
+	border:								1px #0B0B61 solid;
+	vertical-align:						middle;
+	-webkit-border-radius:				2px;
+	-moz-border-radius:					2px;
+	border-radius:						2px;
+	padding:							2px;
+}
+
+input:hover, textarea:hover, select:hover, button:hover, checkbox:hover, text:hover
+{
+	border:								1px #3104B4 solid;
+}
+
+input:focus, textarea:focus, select:focus, button:focus, checkbox:focus, text:focus
+{
+	border:								1px #0174DF solid;
+}
+
+.tabLinks
+{
+	width:								1100px;
+	border:								1px solid #000;
+	border-collapse:					collapse;
+	margin-top:							30px;
+	margin-bottom:						15px;
+}
+
+.tabLinks th
+{
+	border-right:						1px dotted #AAA;
+	border-bottom:						1px solid #000;
+	padding:							10px 5px;
+}
+
+.tabLinks td
+{
+	border-right:						1px dotted #AAA;
+	padding:							7px 5px 7px 10px;
+}
+
+.logoLink
+{
+	width:								16px;
+	height:								16px;
+	border:								none;
+	vertical-align:						middle;
+}
+
+.flagcountry {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width:								64px;
+	height:								48px;
+	vertical-align:						middle;
+}
+
+#flag{
+    text-align:center;
+}
+
+
+

@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  
+  devops:
+   build: .
+   tty: true
+   restart: always
+   volumes: 
+    - /Users/nic/code/:/home/nic/devops/code/
+  
+  nginx:
+    image: nginx:latest
+    tty: true
+    restart: always
+    volumes:
+      - /Users/nic/code/DOCKER - Tools/www:/usr/share/nginx/html
+    ports: 
+      - "8080:80"
+
+  sftp:
+    image: atmoz/sftp
+    tty: true
+    restart: always
+    volumes:
+      - /Users/nic/code/DOCKER - Tools/sftp:/home/nic/sftp
+      - /Users/nic/.ssh/id_rsa.pub:/home/nic/.ssh/keys/id_rsa.pub
+    ports:
+        - "2222:22"
+    command: nic:password:1001
+
+
+
+    
