@@ -67,12 +67,15 @@ An interactive shell is configured in this container so we can access it using t
 
 This container is customized to match my laptop's folder so you might want to change a few lines of code in order to match your own environment.
 
-You would need to pull the entire code and once you have done your modifications, you should build the containers and start them
+You would need to pull the entire code and once you have done your modifications, you should build the containers and start them.
+
+I suggest you import your own public key into the container, otherwise you would have to login with a password. Here in the docker-compose, I copy my laptop  public key to the container. (/Users/nic/.ssh/id_rsa.pub:/home/nic/.ssh/keys/id_rsa.pub)
 
 ```sh
 docker-compose up --build
 ```
 The 3 containers will be build and ready to be used.
+
 
 
 # Bring down the environment.
