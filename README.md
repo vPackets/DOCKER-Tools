@@ -65,6 +65,8 @@ An interactive shell is configured in this container so we can access it using t
 
 # Installation
 
+## Full Devops Suite (3 containers - DevOps - NGINX - SFTP)
+
 This container is customized to match my laptop's folder so you might want to change a few lines of code in order to match your own environment.
 
 You would need to pull the entire code and once you have done your modifications, you should build the containers and start them.
@@ -76,6 +78,30 @@ docker-compose up --build
 ```
 The 3 containers will be build and ready to be used.
 
+```sh
+docker exec -it --user nic docker-tools_devops_1 /bin/zsh
+```
+
+## DevOps Container Only
+
+You also have the ability to just use the DevOps container.
+
+Build the image:
+```sh
+docker build -t vpackets/tools .
+```
+
+Run the container: 
+
+```sh
+docker run -dit --name vpackets-tools -h vpackets-tools -v /Users/nic/Code/:/home/nic/devops/code vpackets/tools
+```
+
+Access the container (of course, change the user/folder in your Dockerfile):
+
+```sh
+docker exec -it --user nic vpackets-tools /bin/zsh
+```
 
 
 # Bring down the environment.
