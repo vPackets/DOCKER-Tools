@@ -106,9 +106,16 @@ docker exec -it --user nic vpackets-tools /bin/zsh
 
 # Bring down the environment.
 
+## Full Devops Suite (3 containers - DevOps - NGINX - SFTP)
+
 In order to bring down the environment once you have finished your work, you can just control - C from the terminal (from the terminal you have previously done docker-compose up) or type the following command:
 
 ```sh
 docker-compose down
 ```
 
+## DevOps Container Only
+
+```sh
+docker stop vpackets-tools
+```
