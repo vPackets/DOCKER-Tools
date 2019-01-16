@@ -94,7 +94,7 @@ docker build -t vpackets/tools .
 Run the container: 
 
 ```sh
-docker run -dit --name vpackets-tools -h vpackets-tools -v /Users/nic/Code/:/home/nic/devops/code vpackets/tools
+docker run -dit --name vpackets-tools -h vpackets-tools -v /Users/nic/Code/:/home/nic/code vpackets/tools
 ```
 
 Access the container (of course, change the user/folder in your Dockerfile):
