@@ -6,8 +6,9 @@ services:
    tty: true
    restart: always
    volumes: 
-    - /Users/nic/code/:/home/nic/devops/code/
-  
+    - /Users/nic/code/:/home/nic/code/
+   hostname: vpackets-tools
+    
   nginx:
     image: nginx:latest
     tty: true

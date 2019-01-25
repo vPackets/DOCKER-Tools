@@ -5,6 +5,9 @@ ENV ANSIBLE_VERSION "2.7.4"
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /home/nic
+RUN mkdir -p /home/nic/ansible
+RUN mkdir -p /home/nic/code
+
 COPY requirements.txt /home/nic/requirements.txt
 
 # Fix bad proxy issue
@@ -80,15 +83,10 @@ RUN pip3 install -q --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -q ansible==$ANSIBLE_VERSION
 RUN pip3 install -r requirements.txt
-COPY Ansible/ansible.cfg /home/nic/ansible
+COPY Ansible/ansible.cfg /home/nic/ansible/ansible.cfg
 
 RUN useradd -ms /bin/zsh nic
 RUN usermod -a -G sudo,nic nic
-
-RUN mkdir -p /home/nic/devops
-RUN mkdir -p /home/nic/devops/code
-RUN mkdir -p /home/nic/devops/ansible
-
 
 COPY .zshrc /home/nic/.zshrc
 ADD .oh-my-zsh /home/nic/.oh-my-zsh
