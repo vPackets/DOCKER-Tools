@@ -24,10 +24,12 @@ RUN  apt-get -y update && \
   build-essential \
   ca-certificates \
   curl \
+  dnsutils \
   fping \
   git \
   hping3 \ 
   htop \
+  httpie \
   # need to expose Port
   iperf \
   iperf3 \ 
@@ -38,6 +40,7 @@ RUN  apt-get -y update && \
   iputils-tracepath \
   libfontconfig \
   liblttng-ust0 \
+  man \ 
   mtr \
   mysql-client \
   mysql-server \
@@ -54,6 +57,7 @@ RUN  apt-get -y update && \
   python3-distutils \
   python3-pip \
   python3-scapy \
+  rsync \
   snmp \ 
   snmp-mibs-downloader \
   snmpd \
