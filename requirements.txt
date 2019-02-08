@@ -82,7 +82,6 @@ six==1.11.0
 tabulate==0.8.2
 textfsm==0.4.1
 tftpy==0.8.0
-trigger==1.6.0
 unattended-upgrades==0.1
 unicon==3.4.0
 urllib3==1.24
