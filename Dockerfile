@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
-ENV ANSIBLE_VERSION "2.7.6"
+ENV ANSIBLE_VERSION "2.7.7"
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /home/nic
