@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
-ENV ANSIBLE_VERSION "2.7.7"
+ENV ANSIBLE_VERSION "2.7.6"
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /home/nic
@@ -30,6 +30,7 @@ RUN  apt-get -y update && \
   hping3 \ 
   htop \
   httpie \
+  iftop \
   # need to expose Port
   iperf \
   iperf3 \ 
@@ -48,15 +49,21 @@ RUN  apt-get -y update && \
   net-tools \
   #net-snmp \
   netcat \
+  ngrep \
+  nload \
   nmap \
+  ntop \
+  nsenter \
   openssh-client \
   openssl \
+  p0f \
   python-pip \
   python-scapy \
   python3-dev \
   python3-distutils \
   python3-pip \
   python3-scapy \
+  python3.7 \
   rsync \
   snmp \ 
   snmp-mibs-downloader \
@@ -64,13 +71,18 @@ RUN  apt-get -y update && \
   socat \
   software-properties-common \
   speedtest-cli \
+  sysctl \
   openssh-server \
   supervisor \
   sudo \
+  tc \
   tcpdump \
+  tcptraceroute \
   telnet \
+  traceroute \
   tshark \ 
   wget \
+  wireguard \
   vim \
   wget \
   tree \
