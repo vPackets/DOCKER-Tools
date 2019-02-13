@@ -52,8 +52,6 @@ RUN  apt-get -y update && \
   ngrep \
   nload \
   nmap \
-  ntop \
-  nsenter \
   openssh-client \
   openssl \
   p0f \
@@ -71,18 +69,16 @@ RUN  apt-get -y update && \
   socat \
   software-properties-common \
   speedtest-cli \
-  sysctl \
+  #sysctl \
   openssh-server \
   supervisor \
   sudo \
-  tc \
   tcpdump \
   tcptraceroute \
   telnet \
   traceroute \
   tshark \ 
   wget \
-  wireguard \
   vim \
   wget \
   tree \
