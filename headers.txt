@@ -1,0 +1,14 @@
+HTTP/1.1 403 
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+Strict-Transport-Security: max-age=31536000 ; includeSubDomains
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Set-Cookie: JSESSIONID=79E2081945147C9C91F0A13C4543817F; Path=/; Secure; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 152
+Date: Wed, 06 Mar 2019 14:13:24 GMT
+Server: NSX
+
