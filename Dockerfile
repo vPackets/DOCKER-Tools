@@ -95,7 +95,7 @@ RUN pip3 install -q --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -q ansible==$ANSIBLE_VERSION
 RUN pip3 install -r requirements.txt
-COPY Ansible/ansible.cfg /home/nic/ansible/ansible.cfg
+COPY Ansible/ansible.cfg /etc/ansible/ansible.cfg
 
 RUN useradd -ms /bin/zsh nic
 RUN usermod -a -G sudo,nic nic
