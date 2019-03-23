@@ -55,6 +55,7 @@ RUN  apt-get -y update && \
   nmap \
   openssh-client \
   openssl \
+  packer \
   p0f \
   python-pip \
   python-scapy \
