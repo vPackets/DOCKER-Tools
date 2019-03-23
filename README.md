@@ -97,6 +97,15 @@ Run the container:
 docker run -dit --name vpackets-tools -h vpackets-tools -v /Users/nic/Code/:/home/nic/code vpackets/tools
 ```
 
+or a more explicit command:
+
+```
+docker run -dit --name vpackets-tools \                                                                     
+        -h vpackets-container \
+        -v /Users/nic/Code/:/home/nic/code \
+        -v "/Users/nic/Code/DOCKER - Tools/Ansible/Ansible_variables":/home/nic/ansible \
+        vpackets/tools:latest
+```
 Access the container (of course, change the user/folder in your Dockerfile):
 
 ```sh
