@@ -73,6 +73,7 @@ RUN  apt-get -y update && \
   speedtest-cli \
   #sysctl \
   openssh-server \
+  sshpass \
   supervisor \
   sudo \
   tcpdump \
