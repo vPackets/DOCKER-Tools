@@ -72,6 +72,7 @@ pysmi==0.3.2
 pysnmp==4.4.6
 python-apt==1.6.3
 python-dateutil==2.7.4
+pyvim==2.0.24
 pyvmomi==6.7.1
 PyYAML==4.2b2
 requests==2.20.0
