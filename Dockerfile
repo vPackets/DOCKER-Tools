@@ -1,8 +1,10 @@
 FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
-ENV ANSIBLE_VERSION "2.8.0"
+ENV ANSIBLE_VERSION "2.8.3"
 ENV DEBIAN_FRONTEND=noninteractive
+
+ENV PACKER_VERSION "1.4.1"
 
 WORKDIR /home/nic
 RUN mkdir -p /home/nic/ansible
@@ -81,6 +83,7 @@ RUN  apt-get -y update && \
   telnet \
   traceroute \
   tshark \ 
+  unzip \
   wget \
   vim \
   wget \
@@ -93,6 +96,9 @@ RUN rm powershell_6.1.1-1.ubuntu.18.04_amd64.deb
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true  
 
+RUN wget https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip
+RUN unzip packer_${PACKER_VERSION}_linux_amd64.zip
+RUN mv packer /usr/local/bin
 
 RUN pip3 install -q --upgrade pip
 RUN pip3 install --upgrade setuptools
