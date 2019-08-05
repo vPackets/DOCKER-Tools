@@ -56,6 +56,7 @@ RUN  apt-get -y update && \
   nload \
   nmap \
   openssh-client \
+  openssh-server \
   openssl \
   packer \
   p0f \
