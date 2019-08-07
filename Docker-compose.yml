@@ -8,6 +8,7 @@ services:
    restart: always
    volumes: 
     - /Users/nic/code/:/home/nic/code/
+    - /Users/nic/Code/DOCKER - Tools/Ansible/Ansible_variables:/home/nic/ansible
    hostname: vpackets-tools
     
   nginx:
