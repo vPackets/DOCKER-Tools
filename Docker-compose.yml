@@ -2,6 +2,7 @@ version: '3.7'
 services:
   
   devops:
+   container_name: vpackets-tools
    build: .
    tty: true
    restart: always
@@ -10,6 +11,7 @@ services:
    hostname: vpackets-tools
     
   nginx:
+    container_name: vpackets-nginx
     image: nginx:latest
     tty: true
     restart: always
@@ -19,6 +21,7 @@ services:
       - "8080:80"
 
   sftp:
+    container_name: vpackets-sftp
     image: atmoz/sftp
     tty: true
     restart: always
