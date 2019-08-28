@@ -1,10 +1,10 @@
 FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
-ENV ANSIBLE_VERSION "2.8.3"
+ENV ANSIBLE_VERSION "2.8.4"
 ENV DEBIAN_FRONTEND=noninteractive
 
-ENV PACKER_VERSION "1.4.1"
+ENV PACKER_VERSION "1.4.3"
 
 WORKDIR /home/nic
 RUN mkdir -p /home/nic/ansible
