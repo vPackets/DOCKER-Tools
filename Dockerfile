@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
-ENV ANSIBLE_VERSION "2.8.4"
+ENV ANSIBLE_VERSION "2.8.5"
 ENV DEBIAN_FRONTEND=noninteractive
 
 ENV PACKER_VERSION "1.4.3"
@@ -92,9 +92,11 @@ RUN  apt-get -y update && \
   tree \
   zsh
 
-RUN wget https://github.com/PowerShell/PowerShell/releases/download/v6.1.1/powershell_6.1.1-1.ubuntu.18.04_amd64.deb
-RUN dpkg -i powershell_6.1.1-1.ubuntu.18.04_amd64.deb
-RUN rm powershell_6.1.1-1.ubuntu.18.04_amd64.deb
+RUN wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.3/powershell_6.2.3-1.ubuntu.18.04_amd64.deb
+RUN dpkg -i powershell_6.2.3-1.ubuntu.18.04_amd64.deb
+RUN rm powershell_6.2.3-1.ubuntu.18.04_amd64.deb
+
+RUN pwsh -Command Install-Module VMware.PowerCLI -Force -Verbose
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true  
 
