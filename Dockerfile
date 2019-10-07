@@ -104,6 +104,10 @@ RUN wget https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER
 RUN unzip packer_${PACKER_VERSION}_linux_amd64.zip
 RUN mv packer /usr/local/bin
 
+RUN wget https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip
+RUN unzip terraform_0.12.9_linux_amd64.zip -d /usr/local/bin/
+
+
 RUN pip3 install -q --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -q ansible==$ANSIBLE_VERSION
