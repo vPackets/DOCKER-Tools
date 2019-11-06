@@ -1,0 +1,20 @@
+---
+
+# Playbook created in order to update ubuntu 18.04 servers to latest packages
+#  ansible-playbook update.yaml -k -u nmichel --extra-vars "ansible_sudo_pass= X"
+
+- name: upgrade packages and reboot (if necessary)
+  hosts: ubuntu
+  become: true
+  serial: 1 # one host at a time
+  any_errors_fatal: true
+  max_fail_percentage: 0
+ 
+  tasks: # tasks are done in order
+
+
+    - name: apt-get 
+      apt:
+        upgrade: yes
+        force_apt_get: yes
+

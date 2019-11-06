@@ -1,2 +1,4 @@
-[servers]
-srv-ubuntu01 ansible_ssh_host=10.22.204.200
+[ubuntu]
+10.22.204.200
+10.22.204.201
+online.nmichel.fr

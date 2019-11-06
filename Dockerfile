@@ -1,10 +1,11 @@
 FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
-ENV ANSIBLE_VERSION "2.8.5"
+ENV ANSIBLE_VERSION "2.9.0"
 ENV DEBIAN_FRONTEND=noninteractive
-
 ENV PACKER_VERSION "1.4.3"
+ENV TERRAFORM_VERSION "0.12.13"
+ENV POWERSHELL_VERSION "6.2.3"
 
 WORKDIR /home/nic
 RUN mkdir -p /home/nic/ansible
@@ -92,9 +93,9 @@ RUN  apt-get -y update && \
   tree \
   zsh
 
-RUN wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.3/powershell_6.2.3-1.ubuntu.18.04_amd64.deb
-RUN dpkg -i powershell_6.2.3-1.ubuntu.18.04_amd64.deb
-RUN rm powershell_6.2.3-1.ubuntu.18.04_amd64.deb
+RUN wget https://github.com/PowerShell/PowerShell/releases/download/v${POWERSHELL_VERSION}/powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
+RUN dpkg -i powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
+RUN rm powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
 
 RUN pwsh -Command Install-Module VMware.PowerCLI -Force -Verbose
 
@@ -104,8 +105,8 @@ RUN wget https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER
 RUN unzip packer_${PACKER_VERSION}_linux_amd64.zip
 RUN mv packer /usr/local/bin
 
-RUN wget https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip
-RUN unzip terraform_0.12.9_linux_amd64.zip -d /usr/local/bin/
+RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+RUN unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin/
 
 
 RUN pip3 install -q --upgrade pip
