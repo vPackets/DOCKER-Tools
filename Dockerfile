@@ -2,10 +2,10 @@ FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
 # Variable Definition
-ENV ANSIBLE_VERSION "2.9.0"
+ENV ANSIBLE_VERSION "2.9.6"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PACKER_VERSION "1.4.3"
-ENV TERRAFORM_VERSION "0.12.13"
+ENV TERRAFORM_VERSION "0.12.20"
 ENV POWERSHELL_VERSION "6.2.3"
 
 # Creating Home Directory
@@ -58,6 +58,7 @@ RUN  apt-get -y update && \
   net-tools \
   #net-snmp \
   netcat \
+  netperf \
   ngrep \
   nload \
   nmap \
@@ -136,3 +137,5 @@ RUN  chown -R nic:nic /home/nic
 RUN apt-get clean && \
  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN rm -rf requirements.txt 
+RUN rm packer_${PACKER_VERSION}_linux_amd64.zip
+RUN rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip

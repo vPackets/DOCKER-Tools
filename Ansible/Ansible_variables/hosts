@@ -1,4 +1,7 @@
-[ubuntu]
+[srv-ubuntu01]
+10.22.204.200
+
+[srv-nsx]
 10.22.211.11
 10.22.211.12
 10.22.211.13
@@ -9,6 +12,41 @@
 10.22.213.11
 10.22.213.12
 10.22.213.13
+10.22.214.11
+10.22.214.12
+10.22.214.13
+10.22.215.11
+10.22.215.12
+10.22.215.13
+10.22.215.100
+10.22.216.11
+10.22.216.12
+10.22.216.13
+
+
+[srv-nsx-tenant01]
+10.22.211.11
+10.22.211.12
+10.22.211.13
+10.22.212.11
+10.22.212.12
+10.22.212.13
+10.22.212.100
+10.22.213.11
+10.22.213.12
+10.22.213.13
+
+[srv-nsx-tenant02]
+10.22.214.11
+10.22.214.12
+10.22.214.13
+10.22.215.11
+10.22.215.12
+10.22.215.13
+10.22.215.100
+10.22.216.11
+10.22.216.12
+10.22.216.13
 
 [test]
 10.22.212.100
@@ -19,29 +57,143 @@
 
 
 
-[tenant01-influxdb]
+[tenant01-stack01-db]
 10.22.213.11
 
-[tenant01-grafana]
+[tenant01-stack01-web]
 10.22.211.11
 
-[tenant01-python-scripts]
+[tenant01-stack01-app]
 10.22.212.11
 
-[tenant02-influxdb]
+
+[tenant01-stack02-db]
 10.22.213.12
 
-[tenant02-grafana]
+[tenant01-stack02-web]
 10.22.211.12
 
-[tenant02-python-scripts]
+[tenant01-stack02-app]
 10.22.212.12
 
-[tenant03-influxdb]
+
+[tenant01-stack03-db]
 10.22.213.13
 
-[tenant03-grafana]
+[tenant01-stack03-web]
 10.22.211.13
 
-[tenant03-python-scripts]
+[tenant01-stack03-app]
 10.22.212.13
+
+
+[tenant01-app04]
+10.22.212.100
+
+
+
+
+
+
+
+
+
+
+
+[tenant02-stack01-db]
+10.22.216.11
+
+[tenant02-stack01-web]
+10.22.214.11
+
+[tenant02-stack01-app]
+10.22.215.11
+
+
+[tenant02-stack02-db]
+10.22.216.12
+
+[tenant02-stack02-web]
+10.22.214.12
+
+[tenant02-stack02-app]
+10.22.215.12
+
+
+[tenant02-stack03-db]
+10.22.216.13
+
+[tenant02-stack03-web]
+10.22.214.13
+
+[tenant02-stack03-app]
+10.22.215.13
+
+
+[tenant02-app04]
+10.22.215.100
+
+
+
+
+[debug]
+10.22.212.13
+10.22.213.11
+
+[debug-1]
+10.22.213.11
+
+
+[ubuntu-azure:vars]
+ansible_python_interpreter=/usr/bin/python3
+
+
+[ubuntuvm]
+172.16.90.131
+
+
+
+
+
+[web-t1]
+srv-nsx-tenant01-web01 deploy_vsphere_folder='/TENANT-01/WEB' guest_custom_ip='10.22.211.11' guest_notes='WEB #1 Tenant #1' guest_network='vPackets-Tenant01-WEB' guest_gateway='10.22.211.1' 
+srv-nsx-tenant01-web02 deploy_vsphere_folder='/TENANT-01/WEB' guest_custom_ip='10.22.211.12' guest_notes='WEB #2 Tenant #1' guest_network='vPackets-Tenant01-WEB' guest_gateway='10.22.211.1'
+srv-nsx-tenant01-web03 deploy_vsphere_folder='/TENANT-01/WEB' guest_custom_ip='10.22.211.13' guest_notes='WEB #3 Tenant #1' guest_network='vPackets-Tenant01-WEB' guest_gateway='10.22.211.1'
+
+[app-t1]
+srv-nsx-tenant01-app01 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.11' guest_notes='APP #1 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1' 
+srv-nsx-tenant01-app02 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.12' guest_notes='APP #2 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1'
+srv-nsx-tenant01-app03 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.13' guest_notes='APP #3 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1'
+srv-nsx-tenant01-app04 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.100' guest_notes='APP #4 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1'
+
+[db-t1]
+srv-nsx-tenant01-db01 deploy_vsphere_folder='/TENANT-01/DB' guest_custom_ip='10.22.213.11' guest_notes='DB #1 Tenant #1' guest_network='vPackets-Tenant01-DB' guest_gateway='10.22.213.1' 
+srv-nsx-tenant01-db02 deploy_vsphere_folder='/TENANT-01/DB' guest_custom_ip='10.22.213.12' guest_notes='DB #2 Tenant #1' guest_network='vPackets-Tenant01-DB' guest_gateway='10.22.213.1'
+srv-nsx-tenant01-db03 deploy_vsphere_folder='/TENANT-01/DB' guest_custom_ip='10.22.213.13' guest_notes='DB #3 Tenant #1' guest_network='vPackets-Tenant01-DB' guest_gateway='10.22.213.1'
+
+[web-t2]
+srv-nsx-tenant02-web01 deploy_vsphere_folder='/TENANT-02/WEB' guest_custom_ip='10.22.214.11' guest_notes='WEB #1 Tenant #2' guest_network='vPackets-Tenant02-WEB' guest_gateway='10.22.214.1' 
+srv-nsx-tenant02-web02 deploy_vsphere_folder='/TENANT-02/WEB' guest_custom_ip='10.22.214.12' guest_notes='WEB #2 Tenant #2' guest_network='vPackets-Tenant02-WEB' guest_gateway='10.22.214.1'
+srv-nsx-tenant02-web03 deploy_vsphere_folder='/TENANT-02/WEB' guest_custom_ip='10.22.214.13' guest_notes='WEB #3 Tenant #2' guest_network='vPackets-Tenant02-WEB' guest_gateway='10.22.214.1'
+
+[app-t2]
+srv-nsx-tenant02-app01 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.11' guest_notes='APP #1 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1' 
+srv-nsx-tenant02-app02 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.12' guest_notes='APP #2 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1'
+srv-nsx-tenant02-app03 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.13' guest_notes='APP #3 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1'
+srv-nsx-tenant02-app04 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.100' guest_notes='APP #4 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1'
+
+[db-t2]
+srv-nsx-tenant02-db01 deploy_vsphere_folder='/TENANT-02/DB' guest_custom_ip='10.22.216.11' guest_notes='DB #1 Tenant #2' guest_network='vPackets-Tenant02-DB' guest_gateway='10.22.216.1' 
+srv-nsx-tenant02-db02 deploy_vsphere_folder='/TENANT-02/DB' guest_custom_ip='10.22.216.12' guest_notes='DB #2 Tenant #2' guest_network='vPackets-Tenant02-DB' guest_gateway='10.22.216.1'
+srv-nsx-tenant02-db03 deploy_vsphere_folder='/TENANT-02/DB' guest_custom_ip='10.22.216.13' guest_notes='DB #3 Tenant #2' guest_network='vPackets-Tenant02-DB' guest_gateway='10.22.216.1'
+
+
+[azure-ubuntu01]
+172.16.10.4
+
+[ubuntu-eve]
+10.22.204.204
+10.22.204.205
+
+[kimsufi]
+5.196.66.74
