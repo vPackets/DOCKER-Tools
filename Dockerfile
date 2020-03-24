@@ -4,9 +4,9 @@ LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 # Variable Definition
 ENV ANSIBLE_VERSION "2.9.6"
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKER_VERSION "1.4.3"
-ENV TERRAFORM_VERSION "0.12.20"
-ENV POWERSHELL_VERSION "6.2.3"
+ENV PACKER_VERSION "1.5.4"
+ENV TERRAFORM_VERSION "0.12.23"
+ENV POWERSHELL_VERSION "7.0.0"
 
 # Creating Home Directory
 WORKDIR /home/nic
@@ -123,6 +123,7 @@ RUN pip3 install -q --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -q ansible==$ANSIBLE_VERSION
 RUN pip3 install -r requirements.txt
+RUN pip3 install pyATS[library]
 
 # Add user Nic
 RUN useradd -ms /bin/zsh nic
