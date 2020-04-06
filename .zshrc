@@ -74,6 +74,7 @@ plugins=(
   redis-cli
   supervisor
   vscode
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,3 +111,6 @@ source $ZSH/oh-my-zsh.sh
 #PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}] '$PROMPT
 RPROMPT="[%D{%m/%d/%y} - %*]"
 #PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%M:%{$fg[green]%}%/%{$reset_color%} $(git_prompt_info) %(!.#.$) '
+
+source /home/nic/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

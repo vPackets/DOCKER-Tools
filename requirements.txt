@@ -9,7 +9,7 @@ certifi==2018.10.15
 cffi==1.11.5
 chardet==3.0.4
 ciscoaxl==0.125
-ciscoconfparse==1.3.20
+ciscoconfparse==1.5.1
 ciscoris==0.0.4
 cisco-sdwan==0.35
 Click==7.0
@@ -84,7 +84,7 @@ pysmi==0.3.2
 pysnmp==4.4.6
 #python-apt==0.7.8
 python-dateutil==2.7.4
-pyvim==2.0.24
+pyvim==3.0.2
 pyvmomi==6.7.3
 PyYAML==5.3
 requests==2.22.0

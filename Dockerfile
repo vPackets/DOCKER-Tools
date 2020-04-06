@@ -4,8 +4,8 @@ LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 # Variable Definition
 ENV ANSIBLE_VERSION "2.9.6"
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKER_VERSION "1.5.4"
-ENV TERRAFORM_VERSION "0.12.23"
+ENV PACKER_VERSION "1.5.5"
+ENV TERRAFORM_VERSION "0.12.24"
 ENV POWERSHELL_VERSION "7.0.0"
 
 # Creating Home Directory
