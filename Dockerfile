@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
 # Variable Definition
-ENV ANSIBLE_VERSION "2.9.6"
+ENV ANSIBLE_VERSION "2.9.7"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PACKER_VERSION "1.5.5"
 ENV TERRAFORM_VERSION "0.12.24"
