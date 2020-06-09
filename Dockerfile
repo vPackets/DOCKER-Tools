@@ -12,6 +12,7 @@ ENV POWERSHELL_VERSION "7.0.1"
 WORKDIR /home/nmichel
 RUN mkdir -p /home/nmichel/ansible
 RUN mkdir -p /home/nmichel/code
+RUN mkdir -p /home/nmichel/lab-images
 
 # Copy requirement file (PIP Libraries)
 COPY requirements.txt /home/nmichel/requirements.txt
@@ -135,7 +136,7 @@ RUN usermod -a -G sudo,nmichel nmichel
 COPY .zshrc /home/nmichel/.zshrc
 ADD .oh-my-zsh /home/nmichel/.oh-my-zsh
 RUN  chown -R nmichel:nmichel /home/nmichel
-RUN git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+#RUN git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 #RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 # Install OVF Tools

@@ -94,9 +94,10 @@ docker build -t vpackets/tools .
 Run the container: 
 
 ```
-docker run -dit --name vpackets-tools -h vpackets-container -v /Users/nmichel/Code/:/home/nmichel/code -v "/Users/nmichel/Code/DOCKER - Tools/Ansible/Ansible_variables":/home/nmichel/ansible vpackets/tools:latest
+docker run -dit --name vpackets-tools -h vpackets-container -v /Users/nmichel/lab-images:/home/nmichel/lab-images -v /Users/nmichel/Code/:/home/nmichel/code -v "/Users/nmichel/Code/DOCKER-Tools/Ansible/Ansible_variables":/home/nmichel/ansible vpackets/tools:latest
 
 ```
+
 Access the container (of course, change the user/folder in your Dockerfile):
 
 ```sh

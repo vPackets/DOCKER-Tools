@@ -1,40 +1,23 @@
 [kimsufi]
 5.196.66.74
 
-[srv-ubuntu-01.vpackets.net]
-srv-ubuntu-01.vpackets.net
+[srv-ubuntu-01.vpackets.lab]
+srv-ubuntu-01.vpackets.lab
 
-[srv-centos-01.vpackets.net]
-srv-centos-01.vpackets.net
+[srv-centos-01.vpackets.lab]
+srv-centos-01.vpackets.lab
 
-[web-t1]
-srv-nsx-tenant01-web01 deploy_vsphere_folder='/TENANT-01/WEB' guest_custom_ip='10.22.211.11' guest_notes='WEB #1 Tenant #1' guest_network='vPackets-Tenant01-WEB' guest_gateway='10.22.211.1' 
-srv-nsx-tenant01-web02 deploy_vsphere_folder='/TENANT-01/WEB' guest_custom_ip='10.22.211.12' guest_notes='WEB #2 Tenant #1' guest_network='vPackets-Tenant01-WEB' guest_gateway='10.22.211.1'
-srv-nsx-tenant01-web03 deploy_vsphere_folder='/TENANT-01/WEB' guest_custom_ip='10.22.211.13' guest_notes='WEB #3 Tenant #1' guest_network='vPackets-Tenant01-WEB' guest_gateway='10.22.211.1'
+[infrastructure-esxi]
 
-[app-t1]
-srv-nsx-tenant01-app01 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.11' guest_notes='APP #1 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1' 
-srv-nsx-tenant01-app02 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.12' guest_notes='APP #2 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1'
-srv-nsx-tenant01-app03 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.13' guest_notes='APP #3 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1'
-srv-nsx-tenant01-app04 deploy_vsphere_folder='/TENANT-01/APP' guest_custom_ip='10.22.212.100' guest_notes='APP #4 Tenant #1' guest_network='vPackets-Tenant01-APP' guest_gateway='10.22.212.1'
+[infrastructure-dns]
+srv-win2019-01.vpackets.lab
 
-[db-t1]
-srv-nsx-tenant01-db01 deploy_vsphere_folder='/TENANT-01/DB' guest_custom_ip='10.22.213.11' guest_notes='DB #1 Tenant #1' guest_network='vPackets-Tenant01-DB' guest_gateway='10.22.213.1' 
-srv-nsx-tenant01-db02 deploy_vsphere_folder='/TENANT-01/DB' guest_custom_ip='10.22.213.12' guest_notes='DB #2 Tenant #1' guest_network='vPackets-Tenant01-DB' guest_gateway='10.22.213.1'
-srv-nsx-tenant01-db03 deploy_vsphere_folder='/TENANT-01/DB' guest_custom_ip='10.22.213.13' guest_notes='DB #3 Tenant #1' guest_network='vPackets-Tenant01-DB' guest_gateway='10.22.213.1'
 
-[web-t2]
-srv-nsx-tenant02-web01 deploy_vsphere_folder='/TENANT-02/WEB' guest_custom_ip='10.22.214.11' guest_notes='WEB #1 Tenant #2' guest_network='vPackets-Tenant02-WEB' guest_gateway='10.22.214.1' 
-srv-nsx-tenant02-web02 deploy_vsphere_folder='/TENANT-02/WEB' guest_custom_ip='10.22.214.12' guest_notes='WEB #2 Tenant #2' guest_network='vPackets-Tenant02-WEB' guest_gateway='10.22.214.1'
-srv-nsx-tenant02-web03 deploy_vsphere_folder='/TENANT-02/WEB' guest_custom_ip='10.22.214.13' guest_notes='WEB #3 Tenant #2' guest_network='vPackets-Tenant02-WEB' guest_gateway='10.22.214.1'
 
-[app-t2]
-srv-nsx-tenant02-app01 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.11' guest_notes='APP #1 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1' 
-srv-nsx-tenant02-app02 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.12' guest_notes='APP #2 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1'
-srv-nsx-tenant02-app03 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.13' guest_notes='APP #3 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1'
-srv-nsx-tenant02-app04 deploy_vsphere_folder='/TENANT-02/APP' guest_custom_ip='10.22.215.100' guest_notes='APP #4 Tenant #2' guest_network='vPackets-Tenant02-APP' guest_gateway='10.22.215.1'
 
-[db-t2]
-srv-nsx-tenant02-db01 deploy_vsphere_folder='/TENANT-02/DB' guest_custom_ip='10.22.216.11' guest_notes='DB #1 Tenant #2' guest_network='vPackets-Tenant02-DB' guest_gateway='10.22.216.1' 
-srv-nsx-tenant02-db02 deploy_vsphere_folder='/TENANT-02/DB' guest_custom_ip='10.22.216.12' guest_notes='DB #2 Tenant #2' guest_network='vPackets-Tenant02-DB' guest_gateway='10.22.216.1'
-srv-nsx-tenant02-db03 deploy_vsphere_folder='/TENANT-02/DB' guest_custom_ip='10.22.216.13' guest_notes='DB #3 Tenant #2' guest_network='vPackets-Tenant02-DB' guest_gateway='10.22.216.1'
+[lab-01-vcenter]
+lab-01-vcenter-01.supersp.net
+
+[lab-01-esxi]
+lab-01-esxi-01.supersp.net
+lab-02-esxi-01.supersp.net

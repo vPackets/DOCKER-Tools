@@ -80,6 +80,7 @@ pyntc==0.0.9
 pynxos==0.0.5
 pynsxv==0.4.1
 pyserial==3.4
+#pysphere==0.1.8
 pysmi==0.3.2
 pysnmp==4.4.6
 #python-apt==0.7.8
