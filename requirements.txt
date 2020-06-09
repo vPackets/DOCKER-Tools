@@ -17,7 +17,7 @@ colorama==0.4.3
 cot==2.2.0
 cryptography==2.8
 delegator.py==0.1.1
-django==3.0.4
+django==3.0.7
 dnspython==1.15.0
 dnspython3==1.15.0
 docopt==0.6.2
@@ -29,7 +29,7 @@ future==0.17.0
 #genie==19.12
 #gooey==1.0.3
 gunicorn==19.9.0
-httplib2==0.11.3
+httplib2==0.18.0
 idna==2.7
 ipaddress==1.0.23
 itsdangerous==1.1.0
@@ -43,7 +43,7 @@ napalm==2.5.0
 ncclient==0.6.7
 netaddr==0.7.19
 netcalc==0.6.2
-netmiko==3.1.0
+netmiko==3.1.1
 nornir==2.4.0
 nsxramlclient==2.0.7
 paramiko==2.7.1
@@ -85,7 +85,7 @@ pysnmp==4.4.6
 #python-apt==0.7.8
 python-dateutil==2.7.4
 pyvim==3.0.2
-pyvmomi==6.7.3
+pyvmomi==7.0
 PyYAML==5.3
 requests==2.22.0
 ruamel.yaml==0.16.10

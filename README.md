@@ -39,7 +39,7 @@ It consists of the following:
 ### Devops Container
 
 This container will use the customized Dockerfile to build the first container. it has a policy to always restart itself in case of failure.
-We will map the laptop folder of /Users/nic/code/ to the container folder of /home/nic/devops/code/ so that all the code I edit on my laptop using visual studio is accessible by the container so we can run/test/delete it.
+We will map the laptop folder of /Users/nmichel/code/ to the container folder of /home/nmichel/devops/code/ so that all the code I edit on my laptop using visual studio is accessible by the container so we can run/test/delete it.
 
 An interactive shell using zsh is configured in this container so we can access it using the docker exec command
 
@@ -47,7 +47,7 @@ An interactive shell using zsh is configured in this container so we can access 
 
 Official docker container from nginx https://hub.docker.com/_/nginx
 Port redirection : 8080 to 80.
-Volume mapped: /Users/nic/code/DOCKER - Tools/www to /usr/share/nginx/html
+Volume mapped: /Users/nmichel/code/DOCKER - Tools/www to /usr/share/nginx/html
 
 An interactive shell is configured in this container so we can access it using the docker exec command
 
@@ -65,7 +65,7 @@ An interactive shell is configured in this container so we can access it using t
 
 # Installation
 
-## Full Devops Suite (3 containers - DevOps - NGINX - SFTP)
+## Full Devops Suite (3 containers - DevOps - NGINX - SFTP) - TO BE REWRITEN
 
 This container is customized to match my laptop's folder so you might want to change a few lines of code in order to match your own environment.
 
@@ -93,27 +93,18 @@ docker build -t vpackets/tools .
 
 Run the container: 
 
-```sh
-docker run -dit --name vpackets-tools -h vpackets-tools -v /Users/nic/Code/:/home/nic/code vpackets/tools
 ```
+docker run -dit --name vpackets-tools -h vpackets-container -v /Users/nmichel/Code/:/home/nmichel/code -v "/Users/nmichel/Code/DOCKER - Tools/Ansible/Ansible_variables":/home/nmichel/ansible vpackets/tools:latest
 
-or a more explicit command:
-
-```
-docker run -dit --name vpackets-tools \                                                                     
-        -h vpackets-container \
-        -v /Users/nic/Code/:/home/nic/code \
-        -v "/Users/nic/Code/DOCKER - Tools/Ansible/Ansible_variables":/home/nic/ansible \
-        vpackets/tools:latest
 ```
 Access the container (of course, change the user/folder in your Dockerfile):
 
 ```sh
-docker exec -it --user nic vpackets-tools /bin/zsh
+docker exec -it --user nmichel vpackets-tools /bin/zsh 
 ```
 
 
-# Bring down the environment.
+# Bring down the environment. (TO REWRITE)
 
 ## Full Devops Suite (3 containers - DevOps - NGINX - SFTP)
 

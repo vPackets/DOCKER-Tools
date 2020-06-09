@@ -2,19 +2,19 @@ FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
 # Variable Definition
-ENV ANSIBLE_VERSION "2.9.7"
+ENV ANSIBLE_VERSION "2.9.9"
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKER_VERSION "1.5.5"
-ENV TERRAFORM_VERSION "0.12.24"
-ENV POWERSHELL_VERSION "7.0.0"
+ENV PACKER_VERSION "1.5.6"
+ENV TERRAFORM_VERSION "0.12.26"
+ENV POWERSHELL_VERSION "7.0.1"
 
 # Creating Home Directory
-WORKDIR /home/nic
-RUN mkdir -p /home/nic/ansible
-RUN mkdir -p /home/nic/code
+WORKDIR /home/nmichel
+RUN mkdir -p /home/nmichel/ansible
+RUN mkdir -p /home/nmichel/code
 
 # Copy requirement file (PIP Libraries)
-COPY requirements.txt /home/nic/requirements.txt
+COPY requirements.txt /home/nmichel/requirements.txt
 
 # Copy Ansible Config 
 COPY Ansible/ansible.cfg /etc/ansible/ansible.cfg
@@ -74,6 +74,7 @@ RUN  apt-get -y update && \
   python3-pip \
   python3-scapy \
   python3.7 \
+  python3.8 \
   rsync \
   snmp \ 
   snmp-mibs-downloader \
@@ -96,7 +97,8 @@ RUN  apt-get -y update && \
   vim \
   wget \
   tree \
-  zsh
+  zsh \
+  zsh-syntax-highlighting
 
 # Install Powershell
 RUN wget https://github.com/PowerShell/PowerShell/releases/download/v${POWERSHELL_VERSION}/powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
@@ -125,14 +127,20 @@ RUN pip3 install -q ansible==$ANSIBLE_VERSION
 RUN pip3 install -r requirements.txt
 RUN pip3 install pyATS[library]
 
-# Add user Nic
-RUN useradd -ms /bin/zsh nic
-RUN usermod -a -G sudo,nic nic
+# Add user nmichel
+RUN useradd -ms /bin/zsh nmichel
+RUN usermod -a -G sudo,nmichel nmichel
 
 # Copy Oh-My_ZSH Setting 
-COPY .zshrc /home/nic/.zshrc
-ADD .oh-my-zsh /home/nic/.oh-my-zsh
-RUN  chown -R nic:nic /home/nic
+COPY .zshrc /home/nmichel/.zshrc
+ADD .oh-my-zsh /home/nmichel/.oh-my-zsh
+RUN  chown -R nmichel:nmichel /home/nmichel
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+#RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+# Install OVF Tools
+COPY system/ovftools/VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle /home/nmichel/VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle
+RUN /bin/bash /home/nmichel/VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle --eulas-agreed --required --console
 
 # Cleanup
 RUN apt-get clean && \
@@ -140,3 +148,4 @@ RUN apt-get clean && \
 RUN rm -rf requirements.txt 
 RUN rm packer_${PACKER_VERSION}_linux_amd64.zip
 RUN rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+RUN rm VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle

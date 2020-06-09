@@ -50,7 +50,7 @@ pre
 .header
 {
 	padding:							28px;
-	background-color:					#1c376b;
+	background-color:					#0291DA;
 }
 
 .content
@@ -61,11 +61,11 @@ pre
 
 .logo
 {
-	background-image:					url(../img/presidio.png);
+	background-image:					url(../img/vmware.png);
 	background-repeat:					none;
 	position:							absolute;
-	top:								5px;
-	right:								18px;
+	top:								12px;
+	right:								-30px;
 	height:								75px;
 	width:								225px;
 }
