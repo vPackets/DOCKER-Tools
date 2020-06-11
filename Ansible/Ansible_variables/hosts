@@ -21,3 +21,7 @@ lab-01-vcenter-01.supersp.net
 [lab-01-esxi]
 lab-01-esxi-01.supersp.net
 lab-02-esxi-01.supersp.net
+
+[lab-01-nsx-manager-01]
+lab-01-nsx-manager-01.supersp.net
+
