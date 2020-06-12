@@ -4,7 +4,7 @@ LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 # Variable Definition
 ENV ANSIBLE_VERSION "2.9.9"
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKER_VERSION "1.5.6"
+ENV PACKER_VERSION "1.6.0"
 ENV TERRAFORM_VERSION "0.12.26"
 ENV POWERSHELL_VERSION "7.0.1"
 
