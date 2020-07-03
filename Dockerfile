@@ -2,11 +2,11 @@ FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
 # Variable Definition
-ENV ANSIBLE_VERSION "2.9.9"
+ENV ANSIBLE_VERSION "2.9.10"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PACKER_VERSION "1.6.0"
-ENV TERRAFORM_VERSION "0.12.26"
-ENV POWERSHELL_VERSION "7.0.1"
+ENV TERRAFORM_VERSION "0.12.28"
+ENV POWERSHELL_VERSION "7.0.2"
 
 # Creating Home Directory
 WORKDIR /home/nmichel
