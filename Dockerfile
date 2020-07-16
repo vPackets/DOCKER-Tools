@@ -140,8 +140,8 @@ RUN  chown -R nmichel:nmichel /home/nmichel
 #RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 # Install OVF Tools
-COPY system/ovftools/VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle /home/nmichel/VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle
-RUN /bin/bash /home/nmichel/VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle --eulas-agreed --required --console
+COPY system/ovftools/VMware-ovftool-4.4.0-16360108-lin.x86_64.bundle /home/nmichel/VMware-ovftool-4.4.0-16360108-lin.x86_64.bundle
+RUN /bin/bash /home/nmichel/VMware-ovftool-4.4.0-16360108-lin.x86_64.bundle --eulas-agreed --required --console
 
 # Cleanup
 RUN apt-get clean && \
@@ -149,4 +149,4 @@ RUN apt-get clean && \
 RUN rm -rf requirements.txt 
 RUN rm packer_${PACKER_VERSION}_linux_amd64.zip
 RUN rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-RUN rm VMware-ovftool-4.4.0-15722219-lin.x86_64.bundle
+RUN rm VMware-ovftool-4.4.0-16360108-lin.x86_64.bundle
