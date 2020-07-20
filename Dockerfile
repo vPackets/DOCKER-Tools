@@ -6,7 +6,7 @@ ENV ANSIBLE_VERSION "2.9.10"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PACKER_VERSION "1.6.0"
 ENV TERRAFORM_VERSION "0.12.28"
-ENV POWERSHELL_VERSION "7.0.2"
+ENV POWERSHELL_VERSION "7.0.3"
 
 # Creating Home Directory
 WORKDIR /home/nmichel
@@ -107,7 +107,9 @@ RUN dpkg -i powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
 RUN rm powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
 
 # Install PowerCLI
-RUN pwsh -Command Install-Module VMware.PowerCLI -Force -Verbose
+#RUN pwsh -Command Install-Module VMware.PowerCLI -Force -Verbose
+RUN pwsh  -Command Install-Module -Name VMware.PowerCLI -Scope AllUsers -Force -Verbose
+
 
 # Install Oh-My-ZSH
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true  
