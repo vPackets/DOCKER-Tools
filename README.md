@@ -88,20 +88,33 @@ You also have the ability to just use the DevOps container.
 
 Build the image:
 ```sh
-docker build -t vpackets/tools .
+docker build -t vpackets/tools:6.0.7 .  
 ```
 
-Run the container - on Ubuntu (TO BE RE WRITTEN FOR MAC)
+Run the container - on Ubuntu
 
 ```
 docker run -dit --name vpackets-tools -h vpackets-container -v /iso:/iso -v /home/nmichel/code:/home/nmichel/code -v /home/nmichel/code/docker-tools/Ansible/Ansible_variables:/home/nmichel/ansible vpackets/tools:latest 
 
 ```
 
+
+Run the container - on MAC (updated for MBPro Work)
+
+```
+docker run -dit --name vpackets-tools \
+        -h vpackets-container \
+        -v /Users/nmichel/lab-images:/home/nmichel/lab-images \
+        -v /Users/nmichel/Code/:/home/nmichel/code \
+        -v "/Users/nmichel/Code/DOCKER-Tools/Ansible/Ansible_variables":/home/nmichel/ansible \
+        vpackets/tools:latest
+
+```
+
 Access the container (of course, change the user/folder in your Dockerfile):
 
 ```sh
-docker exec -it --user nmichel vpackets-tools /bin/zsh 
+ docker exec -it --user nmichel vpackets-tools /bin/zsh
 ```
 
 

@@ -2,10 +2,10 @@ FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
 # Variable Definition
-ENV ANSIBLE_VERSION "2.9.10"
+ENV ANSIBLE_VERSION "2.9.11"
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKER_VERSION "1.6.0"
-ENV TERRAFORM_VERSION "0.12.28"
+ENV PACKER_VERSION "1.6.1"
+ENV TERRAFORM_VERSION "0.12.29"
 ENV POWERSHELL_VERSION "7.0.3"
 
 # Creating Home Directory
