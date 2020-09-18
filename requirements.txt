@@ -43,10 +43,10 @@ napalm==2.5.0
 ncclient==0.6.7
 netaddr==0.7.19
 netcalc==0.6.2
-netmiko==3.1.1
-nornir==2.4.0
+netmiko==3.3.0
+nornir==3.0.0
 nsxramlclient==2.0.7
-paramiko==2.7.1
+paramiko==2.7.2
 pexpect==4.6.0
 phonescrape==0.0.1
 ply==3.11
