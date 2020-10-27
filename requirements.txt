@@ -15,7 +15,7 @@ cisco-sdwan==0.35
 Click==7.0
 colorama==0.4.3
 cot==2.2.0
-cryptography==2.8
+cryptography==3.2
 delegator.py==0.1.1
 django==3.0.7
 dnspython==1.15.0
