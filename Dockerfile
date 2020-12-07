@@ -2,11 +2,11 @@ FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
 # Variable Definition
-ENV ANSIBLE_VERSION "2.10.0"
+ENV ANSIBLE_VERSION "2.10.3"
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKER_VERSION "1.6.2"
-ENV TERRAFORM_VERSION "0.13.3"
-ENV POWERSHELL_VERSION "7.0.3"
+ENV PACKER_VERSION "1.6.5"
+ENV TERRAFORM_VERSION "0.14.0"
+ENV POWERSHELL_VERSION "7.1.0"
 
 # Creating Home Directory
 WORKDIR /home/nmichel
@@ -110,6 +110,9 @@ RUN rm powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
 #RUN pwsh -Command Install-Module VMware.PowerCLI -Force -Verbose
 RUN pwsh  -Command Install-Module -Name VMware.PowerCLI -Scope AllUsers -Force -Verbose
 
+# Install NodeJS
+RUN curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+RUN apt-get install -y nodejs
 
 # Install Oh-My-ZSH
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true  
@@ -144,6 +147,7 @@ RUN  chown -R nmichel:nmichel /home/nmichel
 # Install OVF Tools
 COPY system/ovftools/VMware-ovftool-4.4.0-16360108-lin.x86_64.bundle /home/nmichel/VMware-ovftool-4.4.0-16360108-lin.x86_64.bundle
 RUN /bin/bash /home/nmichel/VMware-ovftool-4.4.0-16360108-lin.x86_64.bundle --eulas-agreed --required --console
+
 
 # Cleanup
 RUN apt-get clean && \
