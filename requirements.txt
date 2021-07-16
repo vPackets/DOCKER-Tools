@@ -86,7 +86,7 @@ pysnmp==4.4.6
 python-dateutil==2.7.4
 pyvim==3.0.2
 pyvmomi==7.0.1
-PyYAML==5.3
+PyYAML==5.4
 requests==2.25.0
 ruamel.yaml==0.16.10
 s3transfer==0.1.13
