@@ -2,10 +2,10 @@ FROM ubuntu:18.04
 LABEL Maintainer = "Nicolas MICHEL <nicolas@vpackets.net>"
 
 # Variable Definition
-ENV ANSIBLE_VERSION "2.10.7"
+ENV ANSIBLE_VERSION "4.1.0"
 ENV DEBIAN_FRONTEND=noninteractive
-ENV PACKER_VERSION "1.7.0"
-ENV TERRAFORM_VERSION "0.14.8"
+ENV PACKER_VERSION "1.7.3"
+ENV TERRAFORM_VERSION "1.0.1"
 ENV POWERSHELL_VERSION "7.1.3"
 
 # Creating Home Directory
@@ -27,9 +27,9 @@ COPY system/99fixbadproxy /etc/apt/apt.conf.d/99fixbadproxy
 RUN rm /var/lib/apt/lists/* -vf
 
 #install and source ansible
-RUN  apt-get -y update && \
- apt-get -y dist-upgrade && \
- apt-get -y --force-yes install \
+RUN  apt-get -y update --allow-unauthenticated && \
+  apt-get -y dist-upgrade && \
+  apt-get -y --force-yes install \
   apt-utils \
   build-essential \
   ca-certificates \
@@ -102,13 +102,13 @@ RUN  apt-get -y update && \
   zsh-syntax-highlighting
 
 # Install Powershell
-RUN wget https://github.com/PowerShell/PowerShell/releases/download/v${POWERSHELL_VERSION}/powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
-RUN dpkg -i powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
-RUN rm powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
+#RUN wget https://github.com/PowerShell/PowerShell/releases/download/v${POWERSHELL_VERSION}/powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
+#RUN dpkg -i powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
+#RUN rm powershell_${POWERSHELL_VERSION}-1.ubuntu.18.04_amd64.deb
 
 # Install PowerCLI
 #RUN pwsh -Command Install-Module VMware.PowerCLI -Force -Verbose
-RUN pwsh  -Command Install-Module -Name VMware.PowerCLI -Scope AllUsers -Force -Verbose
+#RUN pwsh  -Command Install-Module -Name VMware.PowerCLI -Scope AllUsers -Force -Verbose
 
 # Install NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
@@ -131,7 +131,7 @@ RUN pip3 install -q --upgrade pip
 RUN pip3 install --upgrade setuptools
 RUN pip3 install -q ansible==$ANSIBLE_VERSION
 RUN pip3 install -r requirements.txt
-RUN pip3 install pyATS[library]
+#RUN pip3 install pyATS[library]
 
 # Add user nmichel
 RUN useradd -ms /bin/zsh nmichel
