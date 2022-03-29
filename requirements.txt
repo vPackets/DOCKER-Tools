@@ -45,7 +45,7 @@ netaddr==0.8.0
 netcalc==0.6.2
 netmiko==3.3.2
 nornir==3.0.0
-paramiko==2.7.2
+paramiko==2.10.1
 pexpect==4.6.0
 phonescrape==0.0.1
 ply==3.11
