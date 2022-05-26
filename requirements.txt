@@ -100,7 +100,7 @@ speedtest-cli==2.1.2
 tabulate==0.8.2
 textfsm==1.1.0
 tftpy==0.8.0
-ujson==1.35
+ujson==5.2.0
 unattended-upgrades==0.1
 #unicon==21.5.1
 #urllib3==1.26.2
