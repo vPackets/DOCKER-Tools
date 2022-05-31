@@ -13,13 +13,16 @@ srv-ubuntu-01.vpackets.lab
 172.31.100.200 ansible_ssh_user=cumulus
 
 [cumulus-tor02]
-172.31.100.201 ansible_ssh_user=cumulus 
+172.31.100.201 ansible_ssh_user=cumulus
 
 [cumulus-tor03]
-172.31.100.202 ansible_ssh_user=cumulus 
+172.31.100.202 ansible_ssh_user=cumulus
 
 [cumulus-tor04]
-172.31.100.203 ansible_ssh_user=cumulus 
+172.31.100.203 ansible_ssh_user=cumulus
 
 [cumulus-torspine]
-172.31.100.204 ansible_ssh_user=cumulus 
+172.31.100.204 ansible_ssh_user=cumulus
+
+[cumulus-toredge]
+172.31.100.205 ansible_ssh_user=cumulus
