@@ -37,7 +37,7 @@ Jinja2==2.11.1
 jmespath==0.9.3
 junit-xml==1.8
 junos-eznc==2.2.1
-lxml==4.6.2
+lxml==4.9.1
 MarkupSafe==1.1.1
 #napalm==2.5.0
 ncclient==0.6.7
